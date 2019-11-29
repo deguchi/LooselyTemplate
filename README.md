@@ -1,6 +1,16 @@
 # template
 npm scripts で pug+sassがビルドできてオートリロードできるサイト作成環境
 
+## development
+
+```
+npm install  
+npm start
+```
+
+## demo
+https://template-npm-scripts.netlify.com/
+
 ## ライセンスについて
 
 The MIT License (MIT)
