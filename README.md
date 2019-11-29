@@ -1,14 +1,14 @@
 # template
-npm scripts で pug+sassがビルドできてオートリロードできるサイト作成環境
+npm scripts で pug+sassがビルドできてオートリロードできるサイト作成環境を書く
 
-## development
+## 使い方
 
 ```
 npm install  
 npm start
 ```
 
-## demo
+## デモ
 https://template-npm-scripts.netlify.com/
 
 ## ライセンスについて
