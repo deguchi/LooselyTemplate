@@ -1,0 +1,50 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/.bin/npm-run-all clean build:sass build:autoprefixer build:copy:assets watch -p",
+    "clean": "node_modules/.bin/rimraf build",
+    "--": "--",
+    "watch": "concurrently \"npm run watch:pug\" \"npm run watch:sass\" \"npm run watch:browser-sync\"",
+    "watch:browser-sync": "node_modules/.bin/browser-sync start --config ./bs-config.js",
+    "watch:sass": "node_modules/.bin/node-sass ./src/index.sass ./build/index.css --watch",
+    "watch:sass2": "node_modules/.bin/chokidar \"./src/**/*.sass\" --command \"npm run build:sass && npm run build:autoprefixer\"",
+    "watch:pug": "node_modules/.bin/pug -O pug_env.js src/ --out ./build/ --watch --pretty",
+    "---": "---",
+    "build": "node_modules/.bin/npm-run-all clean build:** -s",
+    "build:sass": "node_modules/.bin/node-sass ./src/index.sass ./build/index.css --output-style compressed",
+    "build:autoprefixer": "node_modules/.bin/postcss ./build/index.css -o ./build/index.css --config ./postcss.config.js",
+    "build:pug": "node_modules/.bin/pug -O pug_env.js src/ --out ./build/",
+    "build:copy:assets": "node_modules/.bin/cpx \"src/assets/**/*\" build/assets/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deguchi/template.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/deguchi/template/issues"
+  },
+  "homepage": "https://github.com/deguchi/template#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.2",
+    "browser-sync": "^2.26.7",
+    "chokidar-cli": "^2.1.0",
+    "concurrently": "^5.0.0",
+    "cpx": "^1.5.0",
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.23",
+    "postcss-cli": "^6.1.3",
+    "postcss-scss": "^2.0.0",
+    "pug": "^2.0.4",
+    "pug-cli": "github:pugjs/pug-cli#master",
+    "rimraf": "^3.0.0",
+    "sass": "^1.23.3"
+  }
+}

@@ -1,5 +1,5 @@
 # template
-npm scripts でpug+sassがビルドできてオートリロードできるサイト作成環境
+npm scripts で pug+sassがビルドできてオートリロードできるサイト作成環境
 
 ## ライセンスについて
 
