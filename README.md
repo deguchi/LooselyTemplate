@@ -1,4 +1,4 @@
-# template
+# LooselyTemplate
 npm scripts で pug+sassがビルドできてオートリロードできるサイト作成環境を書く
 
 ## 使い方
