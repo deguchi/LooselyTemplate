@@ -1,5 +1,5 @@
 # LooselyTemplate
-npm scripts で pug+sassがビルドできてオートリロードできるサイト作成環境を書く
+npm scripts で pug+sassがビルドできてオートリロードできるサイト作成環境を書く  
 javascriptも修正するとオートリロードする（コンパイルはしない）
 
 ## 使い方
