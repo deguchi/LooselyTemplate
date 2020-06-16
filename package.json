@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx npm-run-all clean build:sass build:autoprefixer build:copy:assets watch -p",
+    "start": "npx npm-run-all clean build:sass build:autoprefixer build:copy:assets build:copy:js watch -p",
     "clean": "npx rimraf build",
-    "watch": "concurrently \"npm run watch:pug\" \"npm run watch:sass\" \"npm run watch:browser-sync\"",
+    "watch": "concurrently \"npm run watch:pug\" \"npm run watch:sass\" \"npm run watch:js\" \"npm run watch:browser-sync\"",
     "watch:browser-sync": "npx browser-sync start --config ./bs-config.js",
     "watch:sass": "npm run build:sass -- --watch",
     "watch:sass2": "npx chokidar \"./src/**/*.sass\" --command \"npm run build:sass && npm run build:autoprefixer\"",
@@ -15,7 +15,9 @@
     "build:sass": "npx node-sass ./src/index.sass ./build/index.css --output-style compressed",
     "build:autoprefixer": "npx postcss ./build/index.css -o ./build/index.css --config ./postcss.config.js",
     "build:pug": "npx pug -O pug_env.js src/ --out ./build/",
+    "watch:js": "chokidar \"src/**/*.js\" -c \"npm run build:copy:js\"",
     "build:copy:assets": "npx cpx \"src/assets/**/*\" build/assets/",
+    "build:copy:js": "npx cpx \"src/js/**/*\" build/js/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "npx npm-force-resolutions"
   },
