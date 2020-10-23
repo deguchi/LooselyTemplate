@@ -49,7 +49,7 @@
     "sass": "^1.26.3"
   },
   "resolutions": {
-    "minimist": "^1.2.5",
+    "minimist": ">=1.2.5",
     "acorn": "^5.7.4",
     "braces": "^2.3.1"
   }
