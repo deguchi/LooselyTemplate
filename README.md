@@ -5,7 +5,7 @@ javascriptも修正するとオートリロードする（コンパイルはし�
 ## 使い方
 
 ```
-npm install concurrently -g
+npm install concurrently -g 
 npm install  
 npm start
 ```
