@@ -11,7 +11,7 @@
     "watch:sass1": "npm run build:sass -- --watch",
     "watch:sass": "chokidar \"./src/**/*.sass\" --command \"npm run build:sass && npm run build:autoprefixer\"",
     "watch:pug": "npm run build:pug -- --watch --pretty",
-    "build": "npm-run-all clean build:** -s",
+    "build": "run-s clean build:**",
     "build:sass": "sass ./src/index.sass ./build/index.css --style compressed --no-source-map",
     "build:autoprefixer": "postcss ./build/index.css -o ./build/index.css --config ./postcss.config.js",
     "build:pug": "pug -O pug_env.js src/ --out ./build/",
