@@ -12,14 +12,14 @@
     "watch:sass": "chokidar \"./src/**/*.sass\" --command \"npm run build:sass && npm run build:autoprefixer\"",
     "watch:pug": "npm run build:pug -- --watch --pretty",
     "build": "npm-run-all clean build:** -s",
-    "build:sass": "node-sass ./src/index.sass ./build/index.css --output-style compressed",
+    "build:sass": "sass ./src/index.sass ./build/index.css --style compressed --no-source-map",
     "build:autoprefixer": "postcss ./build/index.css -o ./build/index.css --config ./postcss.config.js",
     "build:pug": "pug -O pug_env.js src/ --out ./build/",
     "watch:js": "chokidar \"src/**/*.js\" -c \"npm run build:copy:js\"",
     "build:copy:assets": "cpx \"src/assets/**/*\" build/assets/",
     "build:copy:js": "cpx \"src/js/**/*\" build/js/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npm-force-resolutions"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "concurrently": "^5.1.0",
     "cpx": "^1.5.0",
     "node-sass": "^5.0.0",
+    "npm-force-resolutions": "^0.0.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.27",
     "postcss-cli": "^6.1.3",
