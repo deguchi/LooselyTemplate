@@ -19,7 +19,7 @@
     "build:copy:assets": "cpx \"src/assets/**/*\" build/assets/",
     "build:copy:js": "cpx \"src/js/**/*\" build/js/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions"
   },
   "repository": {
     "type": "git",
