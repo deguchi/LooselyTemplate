@@ -13,7 +13,8 @@
     "watch:pug": "npm run build:pug -- --watch --pretty",
     "build": "run-s clean build:**",
     "build:sass": "sass ./src/index.sass ./build/index.css --style compressed --no-source-map",
-    "build:autoprefixer": "postcss ./build/index.css -o ./build/index.css --config ./postcss.config.js",
+    "build:autoprefixer": "echo 'dummy'",
+    "//build:autoprefixer": "postcss ./build/index.css -o ./build/index.css --config ./postcss.config.js",
     "build:pug": "pug -O pug_env.js src/ --out ./build/",
     "watch:js": "chokidar \"src/**/*.js\" -c \"npm run build:copy:js\"",
     "build:copy:assets": "cpx \"src/assets/**/*\" build/assets/",
@@ -33,7 +34,7 @@
   "homepage": "https://github.com/deguchi/template#readme",
   "devDependencies": {
     "autoprefixer": "^9.7.5",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.21.0",
     "chokidar-cli": "^2.1.0",
     "clean": "^4.0.2",
     "concurrently": "^5.1.0",
