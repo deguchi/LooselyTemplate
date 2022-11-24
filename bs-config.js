@@ -49,7 +49,7 @@ module.exports = {
     "logFileChanges": true,
     "logSnippet": true,
     "rewriteRules": [],
-    "open": "external",
+    "open": true,
     "browser": "default",
     "cors": false,
     "xip": false,
